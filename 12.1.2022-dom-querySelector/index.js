@@ -41,12 +41,18 @@
 
 //   ---------------  CTRATING ELEMENTS -----------------
 
-const newParagraph = document.createElement("p")
-newParagraph.innerText = "Jackfruit is a useful plant"
-newParagraph.style.color = "red"
-newParagraph.id = "new-para"
-document.querySelector("footer").appendChild(newParagraph)
+// const newParagraph = document.createElement("p")
+// newParagraph.innerText = "Jackfruit is a useful plant"
+// newParagraph.style.color = "red"
+// newParagraph.id = "new-para"
+// document.querySelector("footer").appendChild(newParagraph)
 
-console.log(document.querySelector("footer").classList);
+// document.querySelector("footer").classList.remove("hilight")
+// document.querySelector("footer").classList.add("hello")
+// document.querySelector("footer").classList.toggle("target")
+// document.querySelector("footer").classList.toggle("target")
 
 // console.log(newParagraph.id);
+
+function doStuff() { alert("Hello") }
+setTimeout(doStuff, 1000)
