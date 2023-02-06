@@ -5,7 +5,7 @@ export default function App() {
 	return (
 		<div>
 			<CounterButton />
-			{/* <CounterButton /> */}
+			<CounterButton />
 		</div>
 	)
 }

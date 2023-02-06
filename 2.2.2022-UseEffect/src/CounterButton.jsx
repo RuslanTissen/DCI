@@ -4,21 +4,31 @@ import { useState, useEffect } from "react";
 
 export default function CounterButton() {
 	const [counter, setCounter] = useState(0)
-	const [display, dsetDisplay] = useState(true)
+	const [display, setDisplay] = useState(true)
 
 	// "Register" an effect to run afetr first render
 	useEffect(function () {
-		console.log('CounterButton AFTER first render');
+		console.log('Effect: AFTER first render');
 	}, [])
 
-	console.log(counter);
+	// "register" an effect to run when the value of "display" changes
+	useEffect(() => {
+		console.log('Effect: display is ', display);
+	}, [display])
 
-	const handleClick = () => {
-		setCounter(counter + 1)
-	}
+	// "Register" an effect to run afetr first render
+	useEffect(function () {
+		console.log('Effect: AFTER first render AGAIN');
+
+		return ()=> {console.log('Cleanup');}
+	}, [])
+
+	console.log(counter); // runs for the first render AND for each re-render
 
 	return (
-		<button onClick={handleClick}>
-			{counter}
-		</button>)
-}
+			<div>
+				<button onClick={()=> {setDisplay(!display); setCounter(0)}}>Toggle</button>
+				{display &&	<button onClick={()=>setCounter(counter + 1)}>{counter}</button>}
+			</div>
+		)
+} 
