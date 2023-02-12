@@ -18,16 +18,22 @@ export default function CounterButton() {
 
 	// "Register" an effect to run afetr first render
 	useEffect(function () {
-		console.log('Effect: AFTER first render AGAIN');
-		return ()=> {console.log('Effect: Cleanup');}
+		// console.log('Effect: AFTER first render AGAIN');
+
+		const id = setTimeout(() => console.log('Bleep, bloop'), 10000);
+
+		return () => {
+			console.log('Effect: Cleanup');
+			clearTimeout(id)
+		}
 	}, [])
 
 	console.log(counter); // runs for the first render AND for each re-render
 
 	return (
-			<div>
-				<button onClick={()=> {setDisplay(!display); setCounter(0)}}>Toggle</button>
-				{display &&	<button onClick={()=>setCounter(counter + 1)}>{counter}</button>}
-			</div>
-		)
+		<div>
+			<button onClick={() => { setDisplay(!display); setCounter(0) }}>Toggle</button>
+			{display && <button onClick={() => setCounter(counter + 1)}>{counter}</button>}
+		</div>
+	)
 } 
