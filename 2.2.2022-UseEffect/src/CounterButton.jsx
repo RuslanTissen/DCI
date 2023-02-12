@@ -19,8 +19,7 @@ export default function CounterButton() {
 	// "Register" an effect to run afetr first render
 	useEffect(function () {
 		console.log('Effect: AFTER first render AGAIN');
-
-		return ()=> {console.log('Cleanup');}
+		return ()=> {console.log('Effect: Cleanup');}
 	}, [])
 
 	console.log(counter); // runs for the first render AND for each re-render
