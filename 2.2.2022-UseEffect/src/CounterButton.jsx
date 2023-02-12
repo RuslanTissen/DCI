@@ -20,11 +20,13 @@ export default function CounterButton() {
 	useEffect(function () {
 		// console.log('Effect: AFTER first render AGAIN');
 
-		const id = setTimeout(() => console.log('Bleep, bloop'), 10000);
+		const id = setInterval(() => {
+			console.log('Bleep, bloop')
+		}, 1000);
 
 		return () => {
 			console.log('Effect: Cleanup');
-			clearTimeout(id)
+			clearInterval(id)
 		}
 	}, [])
 
