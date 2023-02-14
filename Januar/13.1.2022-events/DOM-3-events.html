@@ -32,23 +32,30 @@
 			margin: 1em;
 			border-radius: 50%;
 		}
+		button{
+			border: none;
+		}
+		.active{
+			background: rgb(59, 58, 58);
+		}
 	</style>
 </head>
 
 <body>
 	<div id="wrapper">
-		<marquee width="280" height="100" direction="down" behavior="alternate" id="mark">
-			<marquee behavior="alternate">Hello!!!
-		</marquee>
+		<marquee id="mark" width="280" height="100" direction="down" behavior="alternate">
+			<marquee behavior="alternate">
+				Hello!!!
 			</marquee>
-			<button>Click me!</button>
-			<p>A quick brown fox jumped over the lazy cow</p>
+		</marquee>
+		<button>Click me!</button>
+		<p>A quick brown fox jumped over the lazy cow</p>
 	</div>
 
 
 
 
-<script src="DOM-3-events.js"></script>
+	<script src="DOM-3-events.js"></script>
 </body>
 
 </html>
