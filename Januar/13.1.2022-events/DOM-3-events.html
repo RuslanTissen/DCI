@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Events!</title>
+	<script src="DOM-3-events.js"></script>
 	<style>
 		body {
 			display: flex;
@@ -32,10 +33,12 @@
 			margin: 1em;
 			border-radius: 50%;
 		}
-		button{
+
+		button {
 			border: none;
 		}
-		.active{
+
+		.active {
 			background: rgb(59, 58, 58);
 		}
 	</style>
@@ -49,13 +52,21 @@
 			</marquee>
 		</marquee>
 		<button>Click me!</button>
-		<p>A quick brown fox jumped over the lazy cow</p>
+		<p onclick="alert(123)" onmousemove="console.log('Oh hi, Mark');"> <!-- old style!!! DONT do like this!!!-->
+			A quick brown fox jumped over the lazy cow
+		</p>
+		<input type="text">
 	</div>
 
+	<script>
+		/**** FUN CODE PUZZLE *****/
+		s = { body: { style } } = document, i = 0, f = x => {
+			style.transform = `rotate(${2 * Math.sin(++i / 10)}deg)`; setTimeout
+				(f, 80)
+		};
+		f()
 
-
-
-	<script src="DOM-3-events.js"></script>
+	</script>
 </body>
 
 </html>
