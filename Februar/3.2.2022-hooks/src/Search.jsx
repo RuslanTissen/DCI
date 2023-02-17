@@ -15,7 +15,7 @@ export default function Search() {
 	return (
 		<div>
 			<h1>Search!</h1>
-			{searchResults.map(repo => <SearchResult repo={repo} />)}
+			{searchResults.map(repo => <SearchResult repo={repo} test = "hello!" />)}
 		</div>
 	)
 } 
