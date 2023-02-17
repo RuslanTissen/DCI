@@ -1,9 +1,0 @@
-.Alert.error {
-	background: lightpink;
-}
-.Alert.warning {
-	background: hsl(40, 70%, 80%);
-}
-.Alert.info {
-	background: lightblue;
-}
