@@ -1,0 +1,18 @@
+.App {
+  display: flex;
+  overflow: hidden;
+}
+.App img {
+  margin: auto;
+  border-radius: 50%;
+  animation: pause;
+  animation: spin 5s infinite linear;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

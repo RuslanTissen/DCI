@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import SearchResult from "./SearchResult.jsx"
+import Spinner from "./Spinner.jsx"
 
 export default function Search() {
 	const [searchResults, setSearchResults] = useState([])
@@ -25,7 +26,7 @@ export default function Search() {
 		<div>
 			<h1>Search! - {page}</h1>
 
-			{loading === true && <Spiner />}
+			{loading === true && <Spinner />}
 			{loading === false && (
 				<div>
 					{page > 1 && <button onClick={decrementPage}>Prev</button>}
