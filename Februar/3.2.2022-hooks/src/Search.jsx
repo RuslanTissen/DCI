@@ -7,9 +7,9 @@ export default function Search() {
 	const [page, setPage] = useState(1)
 	const [loading, setLoading] = useState(true)
 
-	useEffect(() => {
+	function runThisEffectWhenPageChanges() {
 		console.log('useEffect running');
-		const url = "https://api.github.com/search/repositories?q=react&per_page=100&page=" + page
+		const url = "https://api.github.com/search/repositories?q=react&per_page=7&page=" + page
 		setLoading(true)
 		fetch(url)
 			.then(response => response.json())
@@ -17,7 +17,14 @@ export default function Search() {
 				setSearchResults(result.items)
 				setLoading(false)
 			})
-	}, [page])
+		// .catch(error => {
+		// console.log('ERROR FETCHING ', error);
+		// 	setLoading(false)
+		// 	alert("Ups, I failed to fetch!")
+		// })
+	}
+
+	useEffect(runThisEffectWhenPageChanges, [page])
 
 	function incrementPage() { setPage(page + 1) }
 	function decrementPage() { setPage(page - 1) }
