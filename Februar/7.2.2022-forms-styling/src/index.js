@@ -12,10 +12,12 @@ function App() {
 		setCode(e.target.value)
 	}
 
-	console.log(name, code);
+	const handleSubmit = (e) => {
+		e.preventDefault()
+	}
 
 	return (
-		<form>
+		<form onSubmit={handleSubmit}>
 			<div>
 				<input type="text" value={name} onChange={handleNameChange} />
 			</div>
