@@ -1,26 +1,31 @@
 import { useState } from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 
 function App() {
 	const [name, setName] = useState("Old Masker")
+	const [code, setCode] = useState("")
 
-	const handleChange = (e) => {
+	const handleNameChange = (e) => {
 		setName(e.target.value)
 	}
+	const handleCodeChange = (e) => {
+		setCode(e.target.value)
+	}
 
-	console.log(name);
+	console.log(name, code);
 
 	return (
 		<form>
 			<div>
-				<input type="string" value={name} onChange={handleChange} />
+				<input type="text" value={name} onChange={handleNameChange} />
 			</div>
 			<div>
-				<input type="string" ></input>
+				<input type="text" value={code} onChange={handleCodeChange}></input>
 			</div>
 			<button>Add target to database</button>
 		</form>
 	)
 }
 
-ReactDOM.render(<App />, document.querySelector("#root"))
+const root = ReactDOM.createRoot(document.getElementById("root"))
+root.render(<App />)
