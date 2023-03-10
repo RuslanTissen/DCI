@@ -14,6 +14,12 @@ function App() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
+		// HERE Add your logic:
+		const data = {
+			name: name,
+			code: code
+		}
+		// Send the "data" to an API:
 	}
 
 	return (
