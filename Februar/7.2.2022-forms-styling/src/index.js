@@ -1,15 +1,21 @@
 import { useState } from "react";
 import ReactDOM from "react-dom/client";
 
+// VERSION 3:
 function App() {
-	const [name, setName] = useState("Old Masker")
-	const [code, setCode] = useState("")
+	const [data, setData] = useState({ name: "", code: "" })
 
 	const handleNameChange = (e) => {
-		setName(e.target.value)
+		setData({ code: data.code, name: e.target.value })
 	}
+
 	const handleCodeChange = (e) => {
-		setCode(e.target.value)
+		// setCode(e.target.value)
+		setData({ code: e.target.value, name: data.name })
+	}
+
+	const handleChange = (e) =>{
+		
 	}
 
 	const handleSubmit = (e) => {
@@ -22,20 +28,63 @@ function App() {
 		// Send the "data" to an API:
 	}
 
+	console.log(data);
+
 	return (
 		<form onSubmit={handleSubmit}>
 			<div>
-				<input type="text" value={name} onChange={handleNameChange} />
+				<input type="text" value={data.name} onChange={handleNameChange} />
 			</div>
 			<div>
-				<input type="text" value={code} onChange={handleCodeChange}></input>
+				<input type="text" value={data.code} onChange={handleCodeChange}></input>
 			</div>
 			<button>Add target to database</button>
 		</form>
 	)
 }
 
-// VERSION WITH SEPARATE STATE VARIABLES:
+
+// VERSION 2 WITH OBJECT STATE VARIABLE:
+
+// function App() {
+// 	const [data, setData] = useState({ name: "", code: "" })
+
+// 	const handleNameChange = (e) => {
+// 		setData({ code: data.code, name: e.target.value })
+// 	}
+
+// 	const handleCodeChange = (e) => {
+// 		// setCode(e.target.value)
+// 		setData({ code: e.target.value, name: data.name })
+// 	}
+
+// 	const handleSubmit = (e) => {
+// 		e.preventDefault()
+// 		// HERE Add your logic:
+// 		const data = {
+// 			name: name,
+// 			code: code
+// 		}
+// 		// Send the "data" to an API:
+// 	}
+
+// 	console.log(data);
+
+// 	return (
+// 		<form onSubmit={handleSubmit}>
+// 			<div>
+// 				<input type="text" value={data.name} onChange={handleNameChange} />
+// 			</div>
+// 			<div>
+// 				<input type="text" value={data.code} onChange={handleCodeChange}></input>
+// 			</div>
+// 			<button>Add target to database</button>
+// 		</form>
+// 	)
+// }
+
+
+// VERSION 1 WITH SEPARATE STATE VARIABLES:
 
 // function App() {
 // 	const [name, setName] = useState("Old Masker")
