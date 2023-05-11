@@ -9,8 +9,13 @@ function TodoList() {
 	}
 
 	const handleSubmit = (e) => {
-		e.preventDefaulte()
-		
+		e.preventDefault()
+		const newTodos = [...todos, text]
+		setTodos(newTodos)
+	}
+
+	const handleClick = (item) => {
+		console.log(item)
 	}
 
 	return (
@@ -22,8 +27,7 @@ function TodoList() {
 
 			/>
 			<ul>
-				<li>Buy coffee</li>
-				<li>Go for a walk</li>
+				{todos.map(item => <li onClick={() => handleClick(item)}>{item}</li>)}
 			</ul>
 		</form>
 	)
