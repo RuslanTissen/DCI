@@ -15,7 +15,8 @@ function TodoList() {
 	}
 
 	const handleClick = (item) => {
-		console.log(item)
+		const newTodos = todos.filter(x => {return x !== item })
+		setTodos(newTodos)
 	}
 
 	return (
