@@ -14,9 +14,6 @@ function TodoList(props) {
 			})
 	}, [])
 
-	// WHAT NOT TO DO!!!
-
-
 	const handleChange = (e) => {
 		setText(e.target.value)
 	}
@@ -25,6 +22,7 @@ function TodoList(props) {
 		e.preventDefault()
 		const newTodos = [...todos, text]
 		setTodos(newTodos)
+		setText("")
 	}
 
 	const handleClick = (item) => {
@@ -43,7 +41,7 @@ function TodoList(props) {
 
 			/>
 			<ul>
-				{todos.map(item => <li onClick={() => handleClick(item)}>{item}</li>)}
+				{todos.map(item => <li onClick={() => handleClick(item)}>Todo:  {item}</li>)}
 			</ul>
 		</form>
 	)
