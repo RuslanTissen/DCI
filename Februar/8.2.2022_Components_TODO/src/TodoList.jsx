@@ -1,8 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
-function TodoList() {
-	const [todos, setTodos] = useState([])
+function TodoList(props) {
+	const { todos, setTodos } = props
 	const [text, setText] = useState("")
+
+	useEffect(() => {
+		const url = "https://jsonplaceholder.typicode.com/todos"
+		fetch(url)
+			.then(response => response.json())  // response.json() it is: result
+			.then(result => {
+				const convertedTodos = result.map(x => x.title)
+				setTodos(convertedTodos)
+			})
+	}, [])
+
+	// WHAT NOT TO DO!!!
+
 
 	const handleChange = (e) => {
 		setText(e.target.value)
@@ -15,9 +28,11 @@ function TodoList() {
 	}
 
 	const handleClick = (item) => {
-		const newTodos = todos.filter(x => {return x !== item })
+		const newTodos = todos.filter(x => { return x !== item })
 		setTodos(newTodos)
 	}
+
+	console.log(Math.random())
 
 	return (
 		<form onSubmit={handleSubmit}>
