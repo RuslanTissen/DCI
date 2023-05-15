@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import trans from "../src/l10n.js"
 
 function TodoList(props) {
-	const { todos, setTodos } = props
+	const { todos, setTodos, lang } = props
 	const [text, setText] = useState("")
 
 	useEffect(() => {
@@ -41,7 +42,9 @@ function TodoList(props) {
 
 			/>
 			<ul>
-				{todos.map(item => <li onClick={() => handleClick(item)}>Todo:  {item}</li>)}
+				{todos.map(item => <li onClick={() => handleClick(item)}>
+					{trans[lang].todo}: {item}
+				</li>)}
 			</ul>
 		</form>
 	)
