@@ -9,7 +9,7 @@ const defaultLanguage = localStorage.getItem("currentLanguage")
 export default function App() {
 	// Hoisting state variable
 	const [todos, setTodos] = useState([])
-	const [lang, setLang] = useState(defaultLanguage)
+	const [lang, setLang] = useState(defaultLanguage || "en")
 
 	useEffect(()=>{
 		localStorage.setItem("currentLanguage", lang) // useEffect(first, second)
