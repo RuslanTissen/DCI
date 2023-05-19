@@ -4,44 +4,69 @@ import './App.css';
 function Login() {
 	return <p>Login</p>
 }
-
 function Contact() {
 	return <p>Contact</p>
 }
-
 function Services() {
 	return (
 		<div>
 			<p>Services</p>
-			<Outlet />
+			{/* <Outlet /> */}
+			<nav>
+				<NavLink to='web'> WEB </NavLink> |
+				<NavLink to='server'> SERVER </NavLink> |
+			</nav>
 		</div>
 	)
 }
 function ServicesWeb() {
-	return <p>Services - Web</p>
+	return (
+		<div>
+			<h2 id='top'>Services - Web</h2>
+			<a href="#bottom" >Go down</a>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, fugit?</p>
+			<p>Iusto, natus aspernatur excepturi sed pariatur maxime at eius incidunt.</p>
+			<p>Dignissimos tempore voluptatem ullam aliquam voluptas placeat voluptates autem sed.</p>
+			<p>Voluptate ratione optio nobis? Magnam autem impedit eveniet in voluptatibus?</p>
+			<p>Similique officia eaque eos ipsam magnam repellat voluptates sint pariatur?</p>
+			<p>Fugit facilis non necessitatibus excepturi aut quos, quod sed sapiente.</p>
+			<p>Aut aperiam voluptatem tempora dignissimos expedita esse laboriosam maiores nostrum?</p>
+			<p>Temporibus iure consectetur eius officiis sequi itaque harum quia. Blanditiis.</p>
+			<p>Sequi adipisci aliquid itaque assumenda commodi ipsa tenetur quae maxime!</p>
+			<p>Sequi adipisci aliquid itaque assumenda commodi ipsa tenetur quae maxime!</p>
+			<p>Sequi adipisci aliquid itaque assumenda commodi ipsa tenetur quae maxime!</p>
+			<p>Sequi adipisci aliquid itaque assumenda commodi ipsa tenetur quae maxime!</p>
+			<p>Sequi adipisci aliquid itaque assumenda commodi ipsa tenetur quae maxime!</p>
+			<p>Sequi adipisci aliquid itaque assumenda commodi ipsa tenetur quae maxime!</p>
+			<p>Sequi adipisci aliquid itaque assumenda commodi ipsa tenetur quae maxime!</p>
+			<p id='bottom'>Ipsum voluptates similique nesciunt ipsa cum eius ut harum. Nesciunt.</p>
+			<a href="#top">Jump to the top</a>
+		</div>
+
+	)
 }
 function ServicesServer() {
 	return <p>Services - Server</p>
 }
 
-console.log("Aplication is starting")
 function App() {
 	return (
 		<div className="App">
 			<NavLink to="/"><h1>Hello</h1></NavLink>
 
-			{/* <nav>
-				<a href='/login'>Login</a> | {" "}
-				<a href='/contact'> Contact</a>
-			</nav> */}
 
 			<nav>
 				<NavLink to='login'>Login</NavLink> | {" "}
 				<NavLink to='contact'> Contact</NavLink> |
 				<NavLink to='services'> Services </NavLink> |
-				<NavLink to='services/web'> WEB </NavLink> |
-				<NavLink to='services/server'> SERVER </NavLink> |
+				{/* <NavLink to='services/web'> WEB </NavLink> |
+				<NavLink to='services/server'> SERVER </NavLink> | */}
 			</nav>
+
+			{/* <nav>
+					<a href='/login'>Login</a> | {" "}
+					<a href='/contact'> Contact</a>
+				</nav> */}
 
 			<Routes>
 				<Route path="login" element={<Login />} />
