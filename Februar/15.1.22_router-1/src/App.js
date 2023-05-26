@@ -16,6 +16,7 @@ function Services() {
 				<NavLink to='web'> WEB </NavLink> |
 				<NavLink to='server'> SERVER </NavLink> |
 			</nav>
+			{/* <Outlet/> */}
 		</div>
 	)
 }
@@ -46,7 +47,12 @@ function ServicesWeb() {
 	)
 }
 function ServicesServer() {
-	return <p>Services - Server</p>
+	return (
+		<div>
+			<p>Services - Server</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores esse velit quo laborum, atque perferendis? At placeat beatae quaerat alias ducimus quo dolore libero? Nobis voluptatum ab nam numquam culpa?</p>
+		</div>
+	)
 }
 
 function App() {
@@ -72,18 +78,17 @@ function App() {
 				<Route path="login" element={<Login />} />
 				<Route path="contact" element={<Contact />} />
 
-				{/* 
-				<Route path="services" element={<Services />} >
-					<Route path="web" element={<ServicesWeb />} />
-					<Route path="server" element={<ServicesServer />} />
-				</Route > */}
-
 				<Route path="services" >
 					<Route index element={<Services />} />
 					<Route path="web" element={<ServicesWeb />} />
 					<Route path="server" element={<ServicesServer />} />
 				</Route >
 
+				{/* 
+				<Route path="services" element={<Services />} >
+					<Route path="web" element={<ServicesWeb />} />
+					<Route path="server" element={<ServicesServer />} />
+				</Route > */}
 			</Routes>
 		</div>
 	);

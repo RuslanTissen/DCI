@@ -40,6 +40,7 @@ function RefTest() {
 		console.log(inputElement.current.value);
 		// Do whatever you want with the value here!!!
 		console.log({name: inputElement.current.value});
+		
 	}
 
 	return (
