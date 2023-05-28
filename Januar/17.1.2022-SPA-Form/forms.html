@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Forms</title>
+</head>
+
+<body>
+
+	<h1>Incident report</h1>
+
+	<main>
+		<form name="incident-report">
+			<div class="form-field">
+				<label for="name">Name</label>
+				<input type="text" name="name" id="name">
+			</div>
+			<div class="form-field">
+				<label for="date">Date</label>
+				<input type="checkbox" name="toggleDate" id="toggleDate">
+				Use date picker<br />
+				<input type="date" name="date" id="date" checked>
+			</div>
+			<div class="form-field">
+				<label for="details">Details</label>
+				<textarea name="details" id="details" cols="30" rows="10"></textarea>
+			</div>
+			<div class="form-field">
+				<label></label>
+				<button id="submit" type="submit">Submit</button>
+				<button id="reset" type="reset"> Reste</button>
+			</div>
+		</form>
+	</main>
+
+
+	<script>
+		const form = document.querySelector("main > form")
+		form.addEventListener("reset", e => {
+			if (!confirm("Are you sure")) {
+				e.preventDefault()
+			}
+		})
+	</script>
+
+</body>
+
+</html>
