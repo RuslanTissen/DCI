@@ -34,9 +34,53 @@
 		const mid = document.querySelector(".mid")
 		const x = document.querySelector(".x")
 
-		x.addEventListener("click", ()=>console.log("x click"))
-		mid.addEventListener("click", ()=>console.log("x click"))
-		outset.addEventListener("click", ()=>console.log("x click"))
+		x.addEventListener("click", (e) => {
+			// e.stopPropagation()  // this stop the event bubbling to the parent
+			console.log("x click")
+		})
+		mid.addEventListener("click", () => console.log("mid click"))
+		outset.addEventListener("click", () => console.log("outset click"))
+
+		outset.addEventListener("click", () => console.log("Capture outest click"), true)
+		mid.addEventListener("click", () => console.log("Capture mid click"), true)
+		x.addEventListener("click", () => console.log("Capture x click"), true)
+	</script>
+
+
+	<ul id="parent">
+		<li>Picture</li>
+		<li>Documents
+			<ul>
+				<li>data.txt</li>
+				<li class="limpopo">notes.txt</li>
+				<li>hello.txt</li>
+			</ul>
+		</li>
+		<li>Downloads</li>
+	</ul>
+
+	<ol>
+		<li>Potatoes</li>
+		<li>beetroots</li>
+		<li>star trek</li>
+	</ol>
+
+	<script>
+		// const lis = document.querySelector("limpopo")
+		// Array.from(lis).forEach(li => {
+		// 	li.addEventListener("click", (e) => {
+		// 		console.log({ target: e.target, current: e.currentTarget })
+		// 	})
+		// })
+
+
+		document.querySelector("#parent").addEventListener("click", e => {
+			console.log(e.target)
+			if (e.target.nodeName === "LI") {
+				e.target.remove()
+			}
+		})
+
 	</script>
 
 </body>
