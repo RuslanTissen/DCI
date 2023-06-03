@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		.box {
+			margin: 2em;
+			padding: 2em;
+			display: grid;
+			margin: auto;
+			background: hsla(100, 50%, 60%, 0.54);
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="box outset">
+		<div class="box mid">
+			<div class="box x">
+				x
+			</div>
+		</div>
+	</div>
+
+	<script>
+		const outset = document.querySelector(".outset")
+		const mid = document.querySelector(".mid")
+		const x = document.querySelector(".x")
+
+		x.addEventListener("click", ()=>console.log("x click"))
+		mid.addEventListener("click", ()=>console.log("x click"))
+		outset.addEventListener("click", ()=>console.log("x click"))
+	</script>
+
+</body>
+
+</html>
