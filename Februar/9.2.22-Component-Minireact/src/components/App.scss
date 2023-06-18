@@ -1,7 +1,26 @@
+
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-    margin: 0;
+	margin: 0;
+	// width: 1500px;
+	// display: flex;
+	// flex-wrap: wrap;
+	// .card{
+	// 	flex: 0 1 20%;
+	// 	img{
+	// 		width: 12rem
+	// 	}
+	// }
 }
+
+// $theme-colors: (
+//     "info": tomato,
+//     "danger": teal,
+// 	 "primary":red
+// );
+
+
+@import '~bootstrap/scss/bootstrap';
