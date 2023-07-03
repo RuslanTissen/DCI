@@ -1,0 +1,11 @@
+{
+  "name": "print-date",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Ruslan",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}
