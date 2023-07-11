@@ -83,9 +83,33 @@ function deleteUser() {
 
 // if you have many promises one after the other
 // FIRST, the not so nice syntax
-const p = addUser()
-p.then((result) => {
-	console.log("Done adding user!", result)
-	deleteUser()
-	console.log(users)
+// const p = addUser()
+// p.then((result) => {
+// 	console.log("Done adding user!", result)
+// 	deleteUser()
+// 	p.then((result) => {
+// 		console.log("Done deleteing user :DD", result)
+// 	})
+// })
+
+// // SECOND, the nice syntax :D
+// const p = addUser()
+// p.then((result) => {
+// 	console.log("Add done", result)
+// 	return deleteUser()
+// }).then((result) => {
+// 	console.log("Delete done", result)
+// })
+
+// SECOND updated, the nice syntax :D
+// A nice syntax (this technique is called chaining)
+addUser().then((result) => {
+	console.log("Add done.", result)
+	return deleteUser()
+}).then((result) => {
+	console.log("Delete done.", result)
+}).catch((error) => {
+	console.warn("Oh no. an error :(", error)
+}).finally(() => {
+	console.log("All done :)")
 })
