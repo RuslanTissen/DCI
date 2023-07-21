@@ -10,11 +10,6 @@ posts.forEach(post => {
 	document.querySelector("#posts").append(li)
 });
 
-
-
-
-
-
 // POST data to fake API
 document.querySelector("#save").addEventListener("click", () => {
 	const text = document.querySelector("#content").value
