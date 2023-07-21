@@ -85,7 +85,7 @@
 
   ```js
   // Use case: Saving the value of a text input into sessionStorage
-  //   and then loading it from sessionStorage during page load
+  // and then loading it from sessionStorage during page load
   const input = document.querySelector("#content")
   const oldValue = sessionStorage.getItem("text-input")
   if (oldValue) {
