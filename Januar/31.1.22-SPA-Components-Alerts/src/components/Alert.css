@@ -1,0 +1,9 @@
+.Alert.error{
+	background-color: pink;
+}
+.Alert.warning{
+	background-color: blue;
+}
+.Alert.info{
+	background-color: green;
+}
